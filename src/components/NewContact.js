@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
-import { Button, Input } from './common';
+import { Header, Button, Input } from './common';
 
 class NewContact extends Component {
   state = {
@@ -11,6 +11,7 @@ class NewContact extends Component {
   render() {
     return (
       <View>
+        <Header headerText="New Contact" />
         <TextInput
           value={this.state.name}
           onChangeText={name => this.setState({ name })}

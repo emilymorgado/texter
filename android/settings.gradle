@@ -1,0 +1,3 @@
+rootProject.name = 'texter'
+
+include ':app'

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput } from 'react-native';
-import { Header, Button, Input } from './common';
+import { Header, Button, Input, Card, CardSection } from './common';
 
 class NewContact extends Component {
   state = {
@@ -10,22 +9,35 @@ class NewContact extends Component {
 
   render() {
     return (
-      <View>
+      <Card>
+
         <Header headerText="New Contact" />
-        <TextInput
-          value={this.state.name}
-          onChangeText={name => this.setState({ name })}
-          style={{ height: 20, width: 100 }}
-        />
-        <TextInput
-          value={this.state.nicknames}
-          onChangeText={nicknames => this.setState({ nicknames })}
-          style={{ height: 20, width: 100 }}
-        />
-        <Button>
-          Save
-        </Button>
-      </View>
+
+        <CardSection>
+          <Input
+            placeholder="Name"
+            label="Name"
+            value={this.state.name}
+            onChangeText={name => this.setState({ name })}
+          />
+        </CardSection>
+
+        <CardSection>
+          <Input
+            placeholder="Names/Nicknames they call you"
+            label="Your names/nicknames"
+            value={this.state.nicknames}
+            onChangeText={nicknames => this.setState({ nicknames })}
+          />
+        </CardSection>
+
+        <CardSection>
+          <Button>
+            Save
+          </Button>
+        </CardSection>
+
+      </Card>
     );
   }
 }

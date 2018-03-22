@@ -8,6 +8,7 @@ const Input = ({ label, value, placeholder, onChangeText }) => {
       <Text style={labelStyle}>{label}</Text>
       <TextInput
         placeholder={placeholder}
+        autoCorrect={false}
         style={inputStyle}
         value={value}
         onChangeText={onChangeText}
@@ -15,8 +16,6 @@ const Input = ({ label, value, placeholder, onChangeText }) => {
     </View>
   )
 };
-
-export { Input };
 
 const styles = {
   inputStyle: {
@@ -39,3 +38,5 @@ const styles = {
     alignItems: 'center'
   }
 };
+
+export { Input };

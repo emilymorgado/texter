@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Header, Button, Input, Card, CardSection } from './common';
+import { Header, Button, Input, Card, CardSection, Dropdown } from './common';
 
 class NewContact extends Component {
   state = {
-    name: 'Name',
-    nicknames: 'Names and nicknames this person calls you'
+    name: '',
+    nicknames: '',
+    responseTime: 0
   };
 
   render() {
@@ -28,6 +29,12 @@ class NewContact extends Component {
             label="Your names/nicknames"
             value={this.state.nicknames}
             onChangeText={nicknames => this.setState({ nicknames })}
+          />
+        </CardSection>
+
+        <CardSection>
+          <Dropdown
+            onValueChange={(itemValue, itemIndex) => this.setState({responseTime: itemValue})}
           />
         </CardSection>
 

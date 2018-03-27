@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Picker } from 'react-native';
+import { View, Text, PickerIOS } from 'react-native';
 
 const timeOptions = [
   {
@@ -27,34 +27,27 @@ const timeOptions = [
 const Dropdown = (props) => {
 
   return(
-
-      <Picker
-        selectedValue={props.responseTime}
-        onValueChange={props.onValueChange}
-        style={styles.containerStyle}>
-
-        {timeOptions.map(timeOption =>
-          (
-            <Picker.Item
-              key={timeOption.label}
-              label={timeOption.label}
-              value={timeOption.value}
-            />
-        ))}
-
-      </Picker>
+    <PickerIOS
+      style={styles.pickerStyle}
+      selectedValue={props.responseTime}>
+      {timeOptions.map(timeOption =>
+        (
+          <PickerIOS.Item
+            key={timeOption.label}
+            label={timeOption.label}
+            value={timeOption.value}
+          />
+      ))}
+    </PickerIOS>
   )
 }
 
+
+
 const styles = {
-  containerStyle: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'red'
-  },
   pickerStyle: {
-    backgroundColor: 'blue'
+    backgroundColor: 'blue',
+    flex: 1
   }
 };
 
